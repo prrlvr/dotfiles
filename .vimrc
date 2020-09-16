@@ -17,8 +17,7 @@ set incsearch             " Surligne les resultats de recherche pendant la
                           " saisie
 set hlsearch              " Surligne les resultats de recherche
 
-" -- Beep
-set visualbell            " Empeche Vim de beeper
+set visualbell
 
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -55,15 +54,11 @@ endi
 call plug#begin('~/.vim/plugged')
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdcommenter'
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
-Plug 'rust-lang/rust.vim'
 call plug#end()
 
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
