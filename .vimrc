@@ -51,6 +51,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endi
 
+" Plug 'Rigellute/rigel'
 call plug#begin('~/.vim/plugged')
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'scrooloose/nerdtree'
@@ -69,11 +70,11 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_powerline_fonts = 1
-" set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
 set noshowmode
+set termguicolors
 
 syntax match nonascii "[^\x00-\x7F]"
 highlight nonascii guibg=Red ctermbg=2
@@ -82,7 +83,6 @@ highlight LineNr ctermfg=NONE ctermbg=NONE guibg=NONE guifg=NONE
 
 "set cc=80
 set list listchars=tab:»·,trail:·
-let g:rustfmt_autosave = 1
 
 autocmd Filetype make setlocal noexpandtab
 autocmd Filetype c setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
