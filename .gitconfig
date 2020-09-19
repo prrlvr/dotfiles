@@ -3,3 +3,4 @@
 	name = Pierre-Olivier Rey
 [core]
 	editor = vim
+	pager = less -FRSX
