@@ -30,6 +30,7 @@ alert = #dc9659
 [global/wm]
 margin-top = 30
 margin-bottom = 5
+enable-ips = true
 
 ;==========================================================
 
@@ -65,7 +66,7 @@ font-1 = siji:pixelsize=10;1
 
 modules-left = i3 spotify
 modules-center = xwindow
-modules-right = eth pulseaudio memory cpu date
+modules-right = eth dunst pulseaudio memory cpu date
 
 ;==========================================================
 
@@ -289,6 +290,14 @@ ramp-volume-0 = 
 ramp-volume-1 =  
 ramp-volume-2 =  
 ramp-volume-foreground = #ab4642
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = ${colors.foreground-alt}
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{A}" &
 
 [module/battery]
 type = internal/battery
