@@ -46,12 +46,8 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec ranger
-bindsym $mod+Shift+F3 exec zensu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+F4 exec pcmanfm
+bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 # bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -102,6 +98,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
+bindsym $mod+minus show scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Workspace names
@@ -147,31 +144,11 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
-
-# Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [class="octopi"] floating enable
-
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
@@ -220,7 +197,6 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -287,9 +263,9 @@ gaps outer -2
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
-exec_always feh --bg-center ~/Pictures/wall/wall.jpg
 exec_always setxkbmap us_intl
 exec_always setxkbmap -option caps:escape
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
-exec --no-startup-id timedatectl
-exec_always --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id timedatectl &
+exec_always --no-startup-id ~/.screenlayout/default.sh &
+exec_always feh --bg-center ~/Pictures/wall/wall.jpg
