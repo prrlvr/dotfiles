@@ -1,7 +1,7 @@
 ;==========================================================
 ;
 ;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+[0];   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
 ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
 ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
@@ -66,7 +66,7 @@ font-1 = siji:pixelsize=10;1
 
 modules-left = i3 spotify
 modules-center = xwindow
-modules-right = eth dunst pulseaudio memory cpu date
+modules-right = news eth dunst pulseaudio memory cpu date
 
 ;==========================================================
 
@@ -389,6 +389,18 @@ format-prefix = " "
 format = <label>
 format-foreground = #a1b56c
 exec = python ~/.config/polybar/spotify_status.py -f '{artist}: {song}'
+
+;[module/news_ipc]
+;type = custom/ipc
+
+;hook-0 = rofi -modi ~/.config/polybar/news.py
+[module/news]
+type = custom/script
+interval = 35
+format = <label>
+format-foreground = #c1cdcd
+exec = python ~/.config/polybar/news.py polybar
+click-left = rofi -modi news:"~/.config/polybar/news.py 90" -show
 
 [settings]
 screenchange-reload = true

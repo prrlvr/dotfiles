@@ -101,11 +101,8 @@ set fillchars=vert:│
 " Enables syntax highlighting
 syntax on
 
-" Allow mouse use in vim
-set mouse=a
-
 " Briefly show matching braces, parens, etc
-set showmatch
+"set showmatch
 
 " Enable line wrapping
 set wrap

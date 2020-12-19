@@ -1,6 +1,10 @@
 [user]
-	email = prrlvr@tutanota.com
-	name = Pierre-Olivier Rey
+    email = pierre-olivier.rey@epita.fr
+    name = Pierre-Olivier Rey
 [core]
-	editor = vim
-	pager = less -FRSX
+    editor = vim
+    pager = less -iFRX
+[push]
+    followTags = false
+[pull]
+    rebase = true
