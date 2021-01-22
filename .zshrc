@@ -106,3 +106,5 @@ alias mk="make all && make check"
 alias vmk="VERBOSE=1 make"
 # Kill discord and launch it again
 #alias kdiscord="ps -ef | grep discord | grep -v grep | awk '{print $2}' | xargs sudo kill && sleep 5  && discord >/dev/null 2>&1 &"
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"

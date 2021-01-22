@@ -136,3 +136,5 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"
